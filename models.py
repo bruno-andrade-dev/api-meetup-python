@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey
 
 class User(Base):
-    __tablename__ = "users"  #nome da tabela no postgres
+    __tablename__ = "users"  
 
     id = Column(Integer, primary_key=True, index=True)
     full_name = Column(String)
@@ -12,7 +12,7 @@ class User(Base):
     hashed_password = Column(String)
     is_organizer = Column(Boolean, default=False)
 
-from sqlalchemy import ForeignKey # Adicione esta importação no topo
+from sqlalchemy import ForeignKey 
 from sqlalchemy.orm import relationship
 
 class Event(Base):
@@ -21,11 +21,11 @@ class Event(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String)
     description = Column(String)
-    date = Column(String) # Para simplificar, usaremos String por enquanto
-    slots = Column(Integer, default=20) # Total de vagas
-    owner_id = Column(Integer, ForeignKey("users.id")) # Liga o evento a um usuário
+    date = Column(String)
+    slots = Column(Integer, default=20)
+    owner_id = Column(Integer, ForeignKey("users.id")) 
 
-    owner = relationship("User") # Permite acessar o criador do evento facilmente
+    owner = relationship("User")
 
 class Registration(Base):
     __tablename__ = "registrations"

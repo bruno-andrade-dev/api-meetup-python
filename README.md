@@ -3,13 +3,13 @@
 API profissional para gerenciamento de eventos técnicos (Meetups), com sistema de autenticação, controle de vagas em tempo real e busca avançada. Desenvolvida com foco em performance assíncrona e segurança de dados.
 
 ## 🛠 Tecnologias e Ferramentas
-- **FastAPI**: Framework web de alta performance.
-- **PostgreSQL**: Banco de dados relacional (via Docker).
-- **SQLAlchemy**: ORM para mapeamento e segurança de consultas.
-- **Pydantic V2**: Validação de dados e schemas rigorosos.
-- **Bcrypt**: Criptografia de senhas (Hashing).
-- **PyJWT**: Autenticação via JSON Web Tokens.
-- **Pytest**: Testes automatizados de integração.
+- **FastAPI**
+- **PostgreSQL**
+- **SQLAlchemy**
+- **Pydantic V2**
+- **Bcrypt**
+- **PyJWT**
+- **Pytest**
 
 ## 📍 Endpoints da API
 

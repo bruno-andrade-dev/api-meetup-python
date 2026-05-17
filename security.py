@@ -3,18 +3,16 @@ import jwt
 from datetime import datetime, timedelta, timezone
 
 def get_password_hash(password: str):
-    # Transforma a string em bytes, gera o salt e faz o hash
     pwd_bytes = password.encode('utf-8')
     salt = bcrypt.gensalt()
     hashed_password = bcrypt.hashpw(pwd_bytes, salt)
-    return hashed_password.decode('utf-8') # Retorna como string para salvar no banco
+    return hashed_password.decode('utf-8')
 
 def verify_password(plain_password: str, hashed_password: str):
     password_byte_enc = plain_password.encode('utf-8')
     hashed_password_byte_enc = hashed_password.encode('utf-8')
     return bcrypt.checkpw(password_byte_enc, hashed_password_byte_enc)
 
-# chave secreta
 SECRET_KEY = "sua_chave_secreta_aqui"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
